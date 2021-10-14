@@ -21,11 +21,7 @@
 
 
     <div class="search-container">
-        <div class="input-container">
-            <label for="pokemon-search">Search by name or ID</label>
-            <input type="text" id="pokemon-search" name="pokemon name or id">
-        </div>
-        <!-- <input type="submit" value="Submit"> -->
+        <input type="text" id="pokemon-search" name="pokemon name or id" placeholder="Search by name or ID">
         <button id="get-pokemon">Get pokemon</button>
     </div>
 
@@ -36,13 +32,13 @@
             </div>
 
             <div class="card-right">
-                <div class="card-right-name">
-                    <h3 class="pokemon-details-title" id="card-pokemon-name">Pokemon name</h3>
-                    <p class="text" id="card-pokemon-id">000</p>
+                <div class="card-right-nameID">
+                    <h3 class="card-right-name" id="card-pokemon-name">Pokemon name</h3>
+                    <p class="text" id="card-pokemon-id">ID: 000</p>
                 </div>
 
                 <div class="powers-container">
-                    <h3 class="pokemon-details-title">Powers</h3>
+                    <h3 class="powers-title">Moves</h3>
                     <div class="span-container">
                         <span class="powers">
                             <p class="text" id="move1">x</p>
@@ -60,10 +56,21 @@
 
                 </div>
                 <div class="evolutions-container">
-                    <h3 class="pokemon-details-title">Evolutions</h3>
-                    <button class="previous-evo">
-                        <img src="" alt="" id="previous-evo-avatar">
-                    </button>
+                    <div class="evolutions-title">
+                        <h3 class="pokemon-details-title">Evolutions</h3>
+                    </div>
+                    <div class="evolutions-buttons">
+                        <button class="evo-btn" id="evo-btn-prev">
+                            <img src="" alt="" id="previous-evo-avatar">
+                        </button>
+                        <button class="evo-btn" id="evo-btn-crt" disabled="true">
+                            <img src="" alt="" id="current-evo-avatar">
+                        </button>
+                        <button class="evo-btn" id="evo-btn-next">
+                            <img src="" alt="" id="next-evo-avatar">
+                        </button>
+                    </div>
+
                 </div>
 
             </div>
