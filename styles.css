@@ -156,6 +156,10 @@ body {
   font-size: 1.2rem;
   border: 1px solid lightgreen;
   border-radius: 5px;
+  -webkit-box-shadow: inset -1px 3px 8px 5px #1f87ff, 2px 5px 16px 0px #0b325e,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: inset -1px 3px 8px 5px #1f87ff, 2px 5px 16px 0px #0b325e,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
 #get-pokemon:hover {
@@ -176,15 +180,18 @@ body {
 }
 
 .card {
-  border: 1px solid lightgray;
   border-radius: 5px;
   margin-top: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  height: 50vh;
+  height: 60vh;
   width: 60vw;
+  -webkit-box-shadow: inset -1px 3px 8px 5px #1f87ff, 2px 5px 16px 0px #0b325e,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: inset -1px 3px 8px 5px #1f87ff, 2px 5px 16px 0px #0b325e,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
 .card-left {
@@ -195,6 +202,7 @@ body {
   flex: 1 1 0;
   min-width: 200px;
   height: 100%;
+  border-radius: 5px 0 0 5px;
 }
 
 .pokemon-image {
@@ -211,6 +219,7 @@ body {
   justify-content: space-evenly;
   align-items: center;
   min-width: 20rem;
+  border-radius: 0 5px 5px 0;
 }
 
 .card-right-nameID {
@@ -244,6 +253,6 @@ body {
 
 .evo-btn {
   border-radius: 50%;
-  width: 6rem;
-  height: 6rem;
+  width: 100px;
+  height: 100px;
 }

@@ -1,15 +1,15 @@
 let mainBtn = document.getElementById('get-pokemon');
 
 mainBtn.addEventListener('click', () => {
-    getPokemon();
+    getPokemon(userInput.value);
     userInput.value = "";
 })
 
 let url = 'https://pokeapi.co/api/v2/pokemon/';
 let urlEvo = 'https://pokeapi.co/api/v2/pokemon-species/';
 let userInput = document.getElementById('pokemon-search');
-async function getPokemon() {
-    const response = await fetch(`${url}${userInput.value.toLowerCase()}`);
+async function getPokemon(searchTerm) {
+    const response = await fetch(`${url}${searchTerm.toLowerCase()}`);
     if (response.status != 200) {
         console.log('Invalid pokemon name or id');
     }
@@ -59,6 +59,9 @@ async function getPokemon() {
         document.getElementById('move4').textContent = 'x';
     }
 
+
+    // document.getElementById('current-evo-avatar').setAttribute('src', data.sprites.front_default);
+
     async function getPokemonEvo() {
         const response = await fetch(`${urlEvo}${data.id}/`);
         if (response.status != 200) {
@@ -66,7 +69,23 @@ async function getPokemon() {
         }
         const dataEvo = await response.json();
         console.log(dataEvo);
-    }
 
+        if (dataEvo.evolves_from_species != null) {
+            let prevEvoName = dataEvo.evolves_from_species.name;
+            console.log(prevEvoName);
+            async function getPrevious() {
+                const r = await fetch(`${url}${prevEvoName}`);
+                const dataPrev = await r.json();
+                console.log(dataPrev);
+                document.getElementById('previous-evo-avatar').setAttribute('src', dataPrev.sprites.front_default);
+                document.getElementById('prev-pokemon').textContent = prevEvoName.toUpperCase();
+            }
+            getPrevious();
+        }
+    }
     getPokemonEvo();
+
+    // document.getElementById('evo-btn-prev').addEventListener('click', () => {
+    //     getPokemon();
+    // })
 }
