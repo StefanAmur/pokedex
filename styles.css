@@ -133,12 +133,22 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+#error-cont {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 2.4rem;
+  background-color: rgb(255, 46, 46);
+  font-size: 1.2rem;
+  color: #fff;
+}
+
 .title {
   display: flex;
   justify-content: center;
   font-weight: 700;
   font-size: 4rem;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 
 .search-container {
@@ -147,6 +157,14 @@ body {
   justify-content: space-evenly;
   align-items: center;
   height: 80px;
+  gap: 1.2rem;
+}
+
+#pokemon-search {
+  width: 13.4rem;
+  height: 1.7rem;
+  border-radius: 5px;
+  font-size: 1rem;
 }
 
 #get-pokemon {
