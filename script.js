@@ -10,7 +10,7 @@ let url = 'https://pokeapi.co/api/v2/pokemon/';
 let urlEvo = 'https://pokeapi.co/api/v2/pokemon-species/';
 let userInput = document.getElementById('pokemon-search');
 async function getPokemon(searchTerm) {
-    const response = await fetch(`${url}${searchTerm.toLowerCase()}`);
+    const response = await fetch(`${url}${searchTerm.split(' ').join('-').toLowerCase()}`);
     if (response.status != 200) {
         // display error element 
         document.getElementById('error-cont').setAttribute('style', 'display: flex;');
