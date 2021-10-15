@@ -12,7 +12,7 @@ let userInput = document.getElementById('pokemon-search');
 async function getPokemon(searchTerm) {
     const response = await fetch(`${url}${searchTerm.toLowerCase()}`);
     if (response.status != 200) {
-        console.log('Invalid pokemon name or ID');
+        // display error element 
         document.getElementById('error-cont').setAttribute('style', 'display: flex;');
     } else {
         const data = await response.json();
@@ -67,15 +67,12 @@ async function getPokemon(searchTerm) {
                 console.log('Invalid pokemon name or id');
             }
             const dataEvo = await response.json();
-            console.log(dataEvo);
 
             if (dataEvo.evolves_from_species != null) {
                 let prevEvoName = dataEvo.evolves_from_species.name;
-                console.log(prevEvoName);
                 async function getPrevious() {
                     const r = await fetch(`${url}${prevEvoName}`);
                     const dataPrev = await r.json();
-                    console.log(dataPrev);
                     document.getElementById('previous-evo-avatar').setAttribute('src', dataPrev.sprites.front_default);
                     document.getElementById('prev-pokemon').textContent = prevEvoName.toUpperCase();
                 }
